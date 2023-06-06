@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nginx-web-daemonset
+  namespace: forma-madiba
+spec:
+  selector:
+    matchLabels:
+      demotype: web-daemonset
+  template:
+    metadata:
+      labels:
+        demotype: web-daemonset
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+      nodeSelector:
+        app: ssd-madiba

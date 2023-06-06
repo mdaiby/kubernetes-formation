@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: apache
+spec:
+  ingressClassName: apache
+  defaultBackend:
+    service:
+      name: apache
+      port:
+        number: 80
+  rules:
+    - host: formation.ludovic.tech
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: apache
+                port:
+                  number: 80
+

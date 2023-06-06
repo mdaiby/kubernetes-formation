@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-php
+  namespace: ludo
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: ludo-php.ludovic.tech
+      http:
+        paths:
+          - backend:
+              service:
+                name: nginx
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
