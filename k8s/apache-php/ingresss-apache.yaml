@@ -8,7 +8,7 @@ metadata:
 spec:
         #ingressClassName: nginx
   rules:
-    - host: app-ludo.ludovic.tech
+    - host: app-madiba.ludovic.tech
       http:
         paths:
           - backend:

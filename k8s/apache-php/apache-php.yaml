@@ -4,7 +4,7 @@ metadata:
   labels:
     app: web
   name: apache-php
-  namespace: #votre namespace
+  namespace: forma-madiba
 spec:
   replicas: 5
   selector:

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-srv
+  labels: web-nodeport
+spec:
+  selector:
+    app: bew
+  type: NodePort
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+    nodePort: 30136
+    protocol: TCP
