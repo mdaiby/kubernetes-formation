@@ -4,7 +4,7 @@ metadata:
   name: apache-data-1
   namespace: forma-madiba
 spec:
-  storageClassName: nfs-client
+  storageClassName: nfs-storage
   accessModes:
     - ReadWriteMany
   resources:

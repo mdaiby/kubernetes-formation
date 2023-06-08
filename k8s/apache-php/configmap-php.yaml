@@ -5,5 +5,7 @@ metadata:
   namespace: forma-madiba
 
 data:
-  port: "8080"
+  ports.conf: | 
+          
+          Listen "8080"
 

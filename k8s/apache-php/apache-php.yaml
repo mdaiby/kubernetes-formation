@@ -15,7 +15,20 @@ spec:
       labels:
         app: web
     spec:
+      volumes:
+      - name: php-config
+        configMap:
+          name: php-configmap
+          items:
+            - key: ports.conf
+              path: ports.conf
+
       containers:
       - image: tutum/apache-php
         name: apache
         imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: php-config
+          mountPath: /etc/apache2/
+          subPath: ports.conf
+
